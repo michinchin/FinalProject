@@ -7,21 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B8CDDC3E81271D621E77A1D /* Pods_Squawk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C347A244E82320BE0A726766 /* Pods_Squawk.framework */; };
 		F303236A1D52665600E30D75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30323691D52665600E30D75 /* AppDelegate.swift */; };
-		F303236C1D52665600E30D75 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F303236B1D52665600E30D75 /* ViewController.swift */; };
 		F303236F1D52665600E30D75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F303236D1D52665600E30D75 /* Main.storyboard */; };
 		F30323711D52665600E30D75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F30323701D52665600E30D75 /* Assets.xcassets */; };
 		F30323741D52665600E30D75 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F30323721D52665600E30D75 /* LaunchScreen.storyboard */; };
+		F3C4614E1D53C7BC000820FC /* ListGroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C4614D1D53C7BC000820FC /* ListGroupsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		047BABB7A4D4F23F35A2695F /* Pods-Squawk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Squawk.release.xcconfig"; path = "Pods/Target Support Files/Pods-Squawk/Pods-Squawk.release.xcconfig"; sourceTree = "<group>"; };
+		9562816616C9B0FD2050FEF9 /* Pods-Squawk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Squawk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Squawk/Pods-Squawk.debug.xcconfig"; sourceTree = "<group>"; };
+		C347A244E82320BE0A726766 /* Pods_Squawk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Squawk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F30323661D52665600E30D75 /* Squawk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Squawk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F30323691D52665600E30D75 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F303236B1D52665600E30D75 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F303236E1D52665600E30D75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F30323701D52665600E30D75 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F30323731D52665600E30D75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F30323751D52665600E30D75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F3C4614D1D53C7BC000820FC /* ListGroupsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListGroupsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B8CDDC3E81271D621E77A1D /* Pods_Squawk.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		53CFC21DC587DBE777BC77B9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C347A244E82320BE0A726766 /* Pods_Squawk.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C64B0FDC37FA56626379BA25 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9562816616C9B0FD2050FEF9 /* Pods-Squawk.debug.xcconfig */,
+				047BABB7A4D4F23F35A2695F /* Pods-Squawk.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		F303235D1D52665600E30D75 = {
 			isa = PBXGroup;
 			children = (
 				F30323681D52665600E30D75 /* Squawk */,
 				F30323671D52665600E30D75 /* Products */,
+				F3C4614C1D53C3AC000820FC /* ViewControllers */,
+				C64B0FDC37FA56626379BA25 /* Pods */,
+				53CFC21DC587DBE777BC77B9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,13 +80,21 @@
 			isa = PBXGroup;
 			children = (
 				F30323691D52665600E30D75 /* AppDelegate.swift */,
-				F303236B1D52665600E30D75 /* ViewController.swift */,
 				F303236D1D52665600E30D75 /* Main.storyboard */,
 				F30323701D52665600E30D75 /* Assets.xcassets */,
 				F30323721D52665600E30D75 /* LaunchScreen.storyboard */,
 				F30323751D52665600E30D75 /* Info.plist */,
 			);
 			path = Squawk;
+			sourceTree = "<group>";
+		};
+		F3C4614C1D53C3AC000820FC /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F3C4614D1D53C7BC000820FC /* ListGroupsViewController.swift */,
+			);
+			name = ViewControllers;
+			path = Squawk/ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +104,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F30323781D52665600E30D75 /* Build configuration list for PBXNativeTarget "Squawk" */;
 			buildPhases = (
+				29BB65277A97856B49B3EC5E /* [CP] Check Pods Manifest.lock */,
 				F30323621D52665600E30D75 /* Sources */,
 				F30323631D52665600E30D75 /* Frameworks */,
 				F30323641D52665600E30D75 /* Resources */,
+				FB464C6522F03334537F6A6D /* [CP] Embed Pods Frameworks */,
+				F2367DCFA7DDFF0C580BD7EC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,12 +166,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		29BB65277A97856B49B3EC5E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F2367DCFA7DDFF0C580BD7EC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Squawk/Pods-Squawk-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FB464C6522F03334537F6A6D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Squawk/Pods-Squawk-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F30323621D52665600E30D75 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F303236C1D52665600E30D75 /* ViewController.swift in Sources */,
+				F3C4614E1D53C7BC000820FC /* ListGroupsViewController.swift in Sources */,
 				F303236A1D52665600E30D75 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -247,6 +331,7 @@
 		};
 		F30323791D52665600E30D75 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9562816616C9B0FD2050FEF9 /* Pods-Squawk.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Squawk/Info.plist;
@@ -258,6 +343,7 @@
 		};
 		F303237A1D52665600E30D75 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 047BABB7A4D4F23F35A2695F /* Pods-Squawk.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Squawk/Info.plist;
@@ -286,6 +372,7 @@
 				F303237A1D52665600E30D75 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
