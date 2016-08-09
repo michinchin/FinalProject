@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Groups-->
@@ -20,6 +21,14 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="G8Q-6b-j3i" id="BRc-tg-sZM">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="GroupName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V3h-53-h2N">
+                                            <rect key="frame" x="84" y="11" width="127" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -30,7 +39,11 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Squads" id="te5-SO-bGY">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="nS7-54-LrO"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="nS7-54-LrO">
+                            <connections>
+                                <segue destination="zc3-6m-ffH" kind="show" id="Dai-na-suY"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -49,11 +62,74 @@
             </objects>
             <point key="canvasLocation" x="285" y="-711"/>
         </scene>
-        <!--Item-->
+        <!--Add New Group-->
+        <scene sceneID="Nqi-vZ-tX3">
+            <objects>
+                <viewController title="Add New Group" id="zc3-6m-ffH" customClass="PhotoViewController" customModule="Squawk" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eNl-Od-Cew"/>
+                        <viewControllerLayoutGuide type="bottom" id="yvF-x1-aa7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kAe-OX-qCu">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="GroupName" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Ee-qj-2CC">
+                                <rect key="frame" x="-6" y="131" width="612" height="58"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="58" id="LEi-Pc-3l7"/>
+                                </constraints>
+                                <color key="textColor" red="0.96465145809999997" green="0.96682543320000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dak-fp-DtB">
+                                <rect key="frame" x="174" y="245" width="253" height="230"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ep-XC-4Ox">
+                                <rect key="frame" x="225" y="483" width="150" height="30"/>
+                                <state key="normal" title="AddGroupPhoto"/>
+                                <connections>
+                                    <action selector="addGroupPhoto:" destination="zc3-6m-ffH" eventType="touchUpInside" id="Ml0-7M-lRS"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Dak-fp-DtB" firstAttribute="centerY" secondItem="kAe-OX-qCu" secondAttribute="centerY" constant="60" id="4Xm-u0-djK"/>
+                            <constraint firstItem="5Ep-XC-4Ox" firstAttribute="top" secondItem="Dak-fp-DtB" secondAttribute="bottom" constant="10" id="AVA-wl-WwS"/>
+                            <constraint firstItem="7Ee-qj-2CC" firstAttribute="centerX" secondItem="Dak-fp-DtB" secondAttribute="centerX" id="DPE-8f-iNa"/>
+                            <constraint firstItem="Dak-fp-DtB" firstAttribute="top" secondItem="7Ee-qj-2CC" secondAttribute="bottom" constant="56" id="HjG-Pp-paK"/>
+                            <constraint firstItem="5Ep-XC-4Ox" firstAttribute="top" secondItem="Dak-fp-DtB" secondAttribute="bottom" constant="8" id="Uba-V7-wUc"/>
+                            <constraint firstItem="7Ee-qj-2CC" firstAttribute="leading" secondItem="kAe-OX-qCu" secondAttribute="leadingMargin" constant="-26" id="b0l-bV-isi"/>
+                            <constraint firstItem="Dak-fp-DtB" firstAttribute="centerX" secondItem="kAe-OX-qCu" secondAttribute="centerX" id="fq2-3z-lcX"/>
+                            <constraint firstItem="7Ee-qj-2CC" firstAttribute="top" secondItem="eNl-Od-Cew" secondAttribute="bottom" constant="67" id="j58-jk-H1q"/>
+                            <constraint firstItem="7Ee-qj-2CC" firstAttribute="centerX" secondItem="5Ep-XC-4Ox" secondAttribute="centerX" id="nNi-eS-hrT"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Uba-V7-wUc"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Add New Group" id="Ugk-4m-92F">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="2eA-H1-8YD"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="YWc-X6-3Cl"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vHT-Tq-rWY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1106" y="-719"/>
+        </scene>
+        <!--Photos-->
         <scene sceneID="QJn-Zm-CxJ">
             <objects>
                 <navigationController id="SRy-Oe-dcG" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="r0J-wE-vG1"/>
+                    <tabBarItem key="tabBarItem" title="Photos" image="Icon-5" id="r0J-wE-vG1">
+                        <inset key="imageInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                    </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fqP-v3-gWA">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -77,7 +153,117 @@
                     <view key="view" contentMode="scaleToFill" id="1yP-fa-tch">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="550" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="C89-3F-TXl">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="550" id="K24-h0-Csp" customClass="PostTableViewCell" customModule="Squawk" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="600" height="550"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="K24-h0-Csp" id="KxN-38-Hu1">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="549.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xDo-qy-os4">
+                                                    <rect key="frame" x="551" y="3" width="44" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="44" id="69J-AE-dGV"/>
+                                                        <constraint firstAttribute="height" constant="44" id="ouT-qk-6zw"/>
+                                                    </constraints>
+                                                    <state key="normal" image="1x"/>
+                                                    <state key="selected" image="Blood"/>
+                                                    <connections>
+                                                        <action selector="likeButtonTapped:" destination="K24-h0-Csp" eventType="touchUpInside" id="1WH-yA-gFH"/>
+                                                    </connections>
+                                                </button>
+                                                <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon" translatesAutoresizingMaskIntoConstraints="NO" id="BsQ-Fh-cIk">
+                                                    <rect key="frame" x="10" y="410" width="20" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="20" id="OHL-ti-zjU"/>
+                                                        <constraint firstAttribute="height" constant="20" id="jdx-9X-NnK"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="frH-Ua-2O3">
+                                                    <rect key="frame" x="550" y="410" width="40" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="40" id="JTc-U3-uB2"/>
+                                                        <constraint firstAttribute="width" constant="60" id="RNd-8D-gOe"/>
+                                                        <constraint firstAttribute="height" constant="30" id="hRF-vu-GX9"/>
+                                                        <constraint firstAttribute="height" constant="60" id="oex-u3-siY"/>
+                                                    </constraints>
+                                                    <inset key="contentEdgeInsets" minX="4" minY="4" maxX="4" maxY="4"/>
+                                                    <state key="normal" image="More-Options"/>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="RNd-8D-gOe"/>
+                                                            <exclude reference="oex-u3-siY"/>
+                                                        </mask>
+                                                    </variation>
+                                                    <connections>
+                                                        <action selector="moreButtonTapped:" destination="K24-h0-Csp" eventType="touchUpInside" id="Cfc-xc-riO"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6mw-oE-mbN">
+                                                    <rect key="frame" x="35" y="410" width="400" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="400" id="9Os-FT-Uat"/>
+                                                        <constraint firstAttribute="height" constant="20" id="Ygw-Au-Urz"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.5607843137254902" green="0.5725490196078431" blue="0.58039215686274515" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OAW-Va-nnn">
+                                                    <rect key="frame" x="0.0" y="50" width="600" height="350"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="350" id="Q9U-da-Y7f"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="BsQ-Fh-cIk" firstAttribute="top" secondItem="OAW-Va-nnn" secondAttribute="bottom" constant="10" id="3Et-HO-uxq"/>
+                                                <constraint firstItem="BsQ-Fh-cIk" firstAttribute="top" secondItem="KxN-38-Hu1" secondAttribute="top" constant="20" symbolic="YES" id="509-bk-5rV"/>
+                                                <constraint firstItem="xDo-qy-os4" firstAttribute="top" secondItem="OAW-Va-nnn" secondAttribute="bottom" constant="20" id="AyJ-Lo-iQp"/>
+                                                <constraint firstItem="OAW-Va-nnn" firstAttribute="top" secondItem="KxN-38-Hu1" secondAttribute="top" constant="50" id="DE1-8h-4fM"/>
+                                                <constraint firstItem="BsQ-Fh-cIk" firstAttribute="leading" secondItem="KxN-38-Hu1" secondAttribute="leading" constant="10" id="HsH-of-H9z"/>
+                                                <constraint firstAttribute="trailing" secondItem="xDo-qy-os4" secondAttribute="trailing" constant="5" id="M87-sa-MKh"/>
+                                                <constraint firstItem="OAW-Va-nnn" firstAttribute="top" secondItem="xDo-qy-os4" secondAttribute="bottom" constant="3" id="OxW-V3-n7v"/>
+                                                <constraint firstAttribute="trailing" secondItem="frH-Ua-2O3" secondAttribute="trailing" constant="10" id="Zzv-Wd-dR0"/>
+                                                <constraint firstItem="6mw-oE-mbN" firstAttribute="top" secondItem="OAW-Va-nnn" secondAttribute="bottom" constant="10" id="ddr-Zf-jnG"/>
+                                                <constraint firstItem="6mw-oE-mbN" firstAttribute="leading" secondItem="BsQ-Fh-cIk" secondAttribute="trailing" constant="5" id="djG-1g-BzK"/>
+                                                <constraint firstItem="frH-Ua-2O3" firstAttribute="top" secondItem="OAW-Va-nnn" secondAttribute="bottom" constant="10" id="n81-Wu-Nwz"/>
+                                                <constraint firstAttribute="trailing" secondItem="OAW-Va-nnn" secondAttribute="trailing" id="qnP-yX-SPc"/>
+                                                <constraint firstAttribute="trailing" secondItem="xDo-qy-os4" secondAttribute="trailing" constant="20" id="rxb-6S-PNF"/>
+                                                <constraint firstItem="xDo-qy-os4" firstAttribute="top" secondItem="KxN-38-Hu1" secondAttribute="top" constant="3" id="sHB-oa-ljA"/>
+                                                <constraint firstItem="OAW-Va-nnn" firstAttribute="leading" secondItem="KxN-38-Hu1" secondAttribute="leading" id="y5Y-Ux-bTQ"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="509-bk-5rV"/>
+                                                    <exclude reference="AyJ-Lo-iQp"/>
+                                                    <exclude reference="rxb-6S-PNF"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="likeButton" destination="xDo-qy-os4" id="S0M-D8-7gP"/>
+                                            <outlet property="likesIconImageView" destination="BsQ-Fh-cIk" id="6b7-md-Lie"/>
+                                            <outlet property="likesLabel" destination="6mw-oE-mbN" id="OeM-HX-TuC"/>
+                                            <outlet property="moreButton" destination="frH-Ua-2O3" id="zE5-cw-IFP"/>
+                                            <outlet property="postImageView" destination="OAW-Va-nnn" id="Wc9-Ox-GiE"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="C89-3F-TXl" secondAttribute="trailing" id="Ou0-vT-ZCw"/>
+                            <constraint firstItem="C89-3F-TXl" firstAttribute="top" secondItem="AbV-W7-Kip" secondAttribute="bottom" id="ikS-62-4Pl"/>
+                            <constraint firstItem="C89-3F-TXl" firstAttribute="leading" secondItem="1yP-fa-tch" secondAttribute="leading" id="rf7-e7-XLY"/>
+                            <constraint firstItem="77j-GE-XtG" firstAttribute="top" secondItem="C89-3F-TXl" secondAttribute="bottom" id="sYh-wX-nuK"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="YdA-zA-qld">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="g5c-7Y-wpX"/>
@@ -85,13 +271,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bRD-ug-3IE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-94" y="857"/>
+            <point key="canvasLocation" x="-82" y="907"/>
         </scene>
         <!--Groups Nav Controller-->
         <scene sceneID="9QE-Lh-Oxp">
             <objects>
                 <navigationController title="Groups Nav Controller" id="ooN-1c-aTq" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="vMv-H8-jKQ"/>
+                    <tabBarItem key="tabBarItem" title="Squads" image="Icon-1" id="vMv-H8-jKQ">
+                        <inset key="imageInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                    </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="FyW-m7-fSR">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -117,7 +305,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="MhM-0i-IZ0"/>
+                    <tabBarItem key="tabBarItem" title="Chat" image="COMMUNICATION" id="MhM-0i-IZ0">
+                        <inset key="imageInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uvL-7D-jqZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -143,4 +333,13 @@
             <point key="canvasLocation" x="-1348" y="-204"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="1x" width="36" height="32"/>
+        <image name="Blood" width="36" height="32"/>
+        <image name="COMMUNICATION" width="46" height="46"/>
+        <image name="Icon" width="44" height="42"/>
+        <image name="Icon-1" width="45" height="46"/>
+        <image name="Icon-5" width="46" height="46"/>
+        <image name="More-Options" width="80" height="44"/>
+    </resources>
 </document>

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        let configuration = ParseClientConfiguration { (configuration) -> Void in
+            configuration.applicationId = "squad-talk"
+            configuration.server = "https://squadtalk.herokuapp.com/parse"
+        }
+        Parse.initializeWithConfiguration(configuration)
+        
+        PFUser.logInWithUsernameInBackground("test", password: "test")
+
+
         return true
     }
 

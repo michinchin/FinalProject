@@ -8,24 +8,38 @@
 
 /* Begin PBXBuildFile section */
 		0B8CDDC3E81271D621E77A1D /* Pods_Squawk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C347A244E82320BE0A726766 /* Pods_Squawk.framework */; };
+		F301CD101D5A3A2500FFAAFA /* ParseLoginHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F301CD0F1D5A3A2500FFAAFA /* ParseLoginHelper.swift */; };
+		F301CD151D5A3C0600FFAAFA /* ParseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F301CD141D5A3C0600FFAAFA /* ParseHelper.swift */; };
+		F301CD181D5A3C8400FFAAFA /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = F301CD171D5A3C8400FFAAFA /* Post.swift */; };
+		F301CD1B1D5A3E1D00FFAAFA /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F301CD1A1D5A3E1D00FFAAFA /* PostTableViewCell.swift */; };
 		F303236A1D52665600E30D75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30323691D52665600E30D75 /* AppDelegate.swift */; };
 		F303236F1D52665600E30D75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F303236D1D52665600E30D75 /* Main.storyboard */; };
 		F30323711D52665600E30D75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F30323701D52665600E30D75 /* Assets.xcassets */; };
 		F30323741D52665600E30D75 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F30323721D52665600E30D75 /* LaunchScreen.storyboard */; };
+		F33337C51D54023D00BA2400 /* PhotoTimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33337C41D54023D00BA2400 /* PhotoTimelineViewController.swift */; };
+		F33337CA1D5410D300BA2400 /* PhotoTakingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33337C91D5410D300BA2400 /* PhotoTakingHelper.swift */; };
 		F3395F6F1D53F4B6002733DE /* GroupsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3395F6E1D53F4B6002733DE /* GroupsTableViewController.swift */; };
+		F3C7437A1D54FB6B008A070F /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C743791D54FB6B008A070F /* PhotoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		047BABB7A4D4F23F35A2695F /* Pods-Squawk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Squawk.release.xcconfig"; path = "Pods/Target Support Files/Pods-Squawk/Pods-Squawk.release.xcconfig"; sourceTree = "<group>"; };
 		9562816616C9B0FD2050FEF9 /* Pods-Squawk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Squawk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Squawk/Pods-Squawk.debug.xcconfig"; sourceTree = "<group>"; };
 		C347A244E82320BE0A726766 /* Pods_Squawk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Squawk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F301CD0F1D5A3A2500FFAAFA /* ParseLoginHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseLoginHelper.swift; sourceTree = "<group>"; };
+		F301CD141D5A3C0600FFAAFA /* ParseHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseHelper.swift; sourceTree = "<group>"; };
+		F301CD171D5A3C8400FFAAFA /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		F301CD1A1D5A3E1D00FFAAFA /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		F30323661D52665600E30D75 /* Squawk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Squawk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F30323691D52665600E30D75 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F303236E1D52665600E30D75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F30323701D52665600E30D75 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F30323731D52665600E30D75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F30323751D52665600E30D75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F33337C41D54023D00BA2400 /* PhotoTimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoTimelineViewController.swift; sourceTree = "<group>"; };
+		F33337C91D5410D300BA2400 /* PhotoTakingHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoTakingHelper.swift; sourceTree = "<group>"; };
 		F3395F6E1D53F4B6002733DE /* GroupsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupsTableViewController.swift; sourceTree = "<group>"; };
+		F3C743791D54FB6B008A070F /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,12 +71,39 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		F301CD0E1D5A391E00FFAAFA /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				F301CD0F1D5A3A2500FFAAFA /* ParseLoginHelper.swift */,
+				F301CD141D5A3C0600FFAAFA /* ParseHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		F301CD161D5A3C6200FFAAFA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F301CD171D5A3C8400FFAAFA /* Post.swift */,
+			);
+			name = Models;
+			path = PhotoTaking/Models;
+			sourceTree = "<group>";
+		};
+		F301CD191D5A3DE900FFAAFA /* Timeline */ = {
+			isa = PBXGroup;
+			children = (
+				F301CD1A1D5A3E1D00FFAAFA /* PostTableViewCell.swift */,
+			);
+			name = Timeline;
+			path = Squawk/PhotoTaking/Models/Timeline;
+			sourceTree = "<group>";
+		};
 		F303235D1D52665600E30D75 = {
 			isa = PBXGroup;
 			children = (
-				F30323681D52665600E30D75 /* Squawk */,
 				F30323671D52665600E30D75 /* Products */,
-				F3C4614C1D53C3AC000820FC /* ViewControllers */,
+				F301CD191D5A3DE900FFAAFA /* Timeline */,
+				F30323681D52665600E30D75 /* Squawk */,
 				C64B0FDC37FA56626379BA25 /* Pods */,
 				53CFC21DC587DBE777BC77B9 /* Frameworks */,
 			);
@@ -79,6 +120,10 @@
 		F30323681D52665600E30D75 /* Squawk */ = {
 			isa = PBXGroup;
 			children = (
+				F301CD161D5A3C6200FFAAFA /* Models */,
+				F3C4614C1D53C3AC000820FC /* ViewControllers */,
+				F33337C61D540FB200BA2400 /* PhotoTaking */,
+				F301CD0E1D5A391E00FFAAFA /* Helpers */,
 				F30323691D52665600E30D75 /* AppDelegate.swift */,
 				F303236D1D52665600E30D75 /* Main.storyboard */,
 				F30323701D52665600E30D75 /* Assets.xcassets */,
@@ -88,13 +133,22 @@
 			path = Squawk;
 			sourceTree = "<group>";
 		};
+		F33337C61D540FB200BA2400 /* PhotoTaking */ = {
+			isa = PBXGroup;
+			children = (
+				F33337C91D5410D300BA2400 /* PhotoTakingHelper.swift */,
+			);
+			path = PhotoTaking;
+			sourceTree = "<group>";
+		};
 		F3C4614C1D53C3AC000820FC /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				F3C743791D54FB6B008A070F /* PhotoViewController.swift */,
 				F3395F6E1D53F4B6002733DE /* GroupsTableViewController.swift */,
+				F33337C41D54023D00BA2400 /* PhotoTimelineViewController.swift */,
 			);
-			name = ViewControllers;
-			path = Squawk/ViewControllers;
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,8 +274,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F33337C51D54023D00BA2400 /* PhotoTimelineViewController.swift in Sources */,
+				F301CD101D5A3A2500FFAAFA /* ParseLoginHelper.swift in Sources */,
+				F301CD151D5A3C0600FFAAFA /* ParseHelper.swift in Sources */,
+				F301CD181D5A3C8400FFAAFA /* Post.swift in Sources */,
 				F3395F6F1D53F4B6002733DE /* GroupsTableViewController.swift in Sources */,
+				F33337CA1D5410D300BA2400 /* PhotoTakingHelper.swift in Sources */,
 				F303236A1D52665600E30D75 /* AppDelegate.swift in Sources */,
+				F3C7437A1D54FB6B008A070F /* PhotoViewController.swift in Sources */,
+				F301CD1B1D5A3E1D00FFAAFA /* PostTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
