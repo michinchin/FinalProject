@@ -7,26 +7,59 @@
 //
 
 import UIKit
+import Parse
 
 class PhotoTimelineViewController: UIViewController{
   
     
     var photoTakingHelper: PhotoTakingHelper?
     var imagePicker: UIImagePickerController!
+    var posts: [Post] = []
+
+    @IBOutlet weak var tableView: UITableView!
     
     
+    @IBAction func addPhotoToTimeline(sender: AnyObject) {
+        photoTakingHelper = PhotoTakingHelper(viewController: self) { (image: UIImage?) in
+            let post = Post()
+            post.image.value = image!
+            post.uploadPost()
+        }
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return posts.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("PostCell") as! PostTableViewCell
+        
+        let post = posts[indexPath.row]
+        post.downloadImage()
+        post.fetchLikes()
+        cell.post = post
+        
+        return cell
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        
+        ParseHelper.timelineRequestForCurrentUser { (result: [PFObject]?, error: NSError?) -> Void in
+            self.posts = result as? [Post] ?? []
+            
+            self.tableView.reloadData()
+        }
+    }
+    
+    
+   
+ 
 
     /*
     // MARK: - Navigation

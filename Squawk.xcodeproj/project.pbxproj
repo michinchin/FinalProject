@@ -95,14 +95,13 @@
 				F301CD1A1D5A3E1D00FFAAFA /* PostTableViewCell.swift */,
 			);
 			name = Timeline;
-			path = Squawk/PhotoTaking/Models/Timeline;
+			path = PhotoTaking/Models/Timeline;
 			sourceTree = "<group>";
 		};
 		F303235D1D52665600E30D75 = {
 			isa = PBXGroup;
 			children = (
 				F30323671D52665600E30D75 /* Products */,
-				F301CD191D5A3DE900FFAAFA /* Timeline */,
 				F30323681D52665600E30D75 /* Squawk */,
 				C64B0FDC37FA56626379BA25 /* Pods */,
 				53CFC21DC587DBE777BC77B9 /* Frameworks */,
@@ -120,6 +119,7 @@
 		F30323681D52665600E30D75 /* Squawk */ = {
 			isa = PBXGroup;
 			children = (
+				F301CD191D5A3DE900FFAAFA /* Timeline */,
 				F301CD161D5A3C6200FFAAFA /* Models */,
 				F3C4614C1D53C3AC000820FC /* ViewControllers */,
 				F33337C61D540FB200BA2400 /* PhotoTaking */,

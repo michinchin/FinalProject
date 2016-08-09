@@ -9,14 +9,12 @@
 import Foundation
 import Parse
 
-
 // 1
 class ParseHelper {
-    
     // Following Relation
-    static let ParseGroupClass       = "Group"
-    static let ParseGroupFromUser    = "fromUser"
-    static let ParseGroupToUser      = "toUser"
+    static let ParseFollowClass       = "Follow"
+    static let ParseFollowFromUser    = "fromUser"
+    static let ParseFollowToUser      = "toUser"
     
     // Like Relation
     static let ParseLikeClass         = "Like"
@@ -37,26 +35,21 @@ class ParseHelper {
     
     
     // 2
-    static func timelineRequestForCurrentUser(range: Range<Int>,completionBlock: PFQueryArrayResultBlock) {
-        let followingQuery = PFQuery(className: ParseGroupClass)
-        followingQuery.whereKey(ParseGroupFromUser, equalTo:PFUser.currentUser()!)
+    static func timelineRequestForCurrentUser(completionBlock: PFQueryArrayResultBlock) {
+        let followingQuery = PFQuery(className: ParseFollowClass)
+        followingQuery.whereKey(ParseFollowFromUser, equalTo:PFUser.currentUser()!)
         
-        let postsFromGroup = Post.query()
-        postsFromGroup!.whereKey(ParsePostUser, matchesKey: ParseGroupToUser, inQuery: followingQuery)
+        let postsFromFollowedUsers = Post.query()
+        postsFromFollowedUsers!.whereKey(ParsePostUser, matchesKey: ParseFollowToUser, inQuery: followingQuery)
         
         let postsFromThisUser = Post.query()
         postsFromThisUser!.whereKey(ParsePostUser, equalTo: PFUser.currentUser()!)
         
-        let query = PFQuery.orQueryWithSubqueries([postsFromGroup!, postsFromThisUser!])
+        let query = PFQuery.orQueryWithSubqueries([postsFromFollowedUsers!, postsFromThisUser!])
         query.includeKey(ParsePostUser)
         query.orderByDescending(ParsePostCreatedAt)
         
-        
-        query.skip = range.startIndex
-        query.limit = range.endIndex - range.startIndex
-        
         query.findObjectsInBackgroundWithBlock(completionBlock)
-        
     }
     
     static func likePost(user: PFUser, post: Post) {

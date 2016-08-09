@@ -127,8 +127,8 @@
         <scene sceneID="QJn-Zm-CxJ">
             <objects>
                 <navigationController id="SRy-Oe-dcG" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Photos" image="Icon-5" id="r0J-wE-vG1">
-                        <inset key="imageInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                    <tabBarItem key="tabBarItem" title="Photos" image="Camera" id="r0J-wE-vG1">
+                        <inset key="imageInsets" minX="-2" minY="-2" maxX="-2" maxY="-2"/>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fqP-v3-gWA">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -145,7 +145,7 @@
         <!--Photos-->
         <scene sceneID="0v7-UJ-BeU">
             <objects>
-                <viewController title="Photos" id="9ee-X5-LDb" sceneMemberID="viewController">
+                <viewController title="Photos" id="9ee-X5-LDb" customClass="PhotoTimelineViewController" customModule="Squawk" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AbV-W7-Kip"/>
                         <viewControllerLayoutGuide type="bottom" id="77j-GE-XtG"/>
@@ -255,6 +255,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="9ee-X5-LDb" id="m3B-TU-XJo"/>
+                                    <outlet property="delegate" destination="9ee-X5-LDb" id="Sr8-NE-fHn"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -266,8 +270,15 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="YdA-zA-qld">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="g5c-7Y-wpX"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="g5c-7Y-wpX">
+                            <connections>
+                                <action selector="addPhotoToTimeline:" destination="9ee-X5-LDb" id="7pv-gP-SxS"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="C89-3F-TXl" id="oNJ-eA-bdd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bRD-ug-3IE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -337,9 +348,9 @@
         <image name="1x" width="36" height="32"/>
         <image name="Blood" width="36" height="32"/>
         <image name="COMMUNICATION" width="46" height="46"/>
+        <image name="Camera" width="20" height="20"/>
         <image name="Icon" width="44" height="42"/>
         <image name="Icon-1" width="45" height="46"/>
-        <image name="Icon-5" width="46" height="46"/>
         <image name="More-Options" width="80" height="44"/>
     </resources>
 </document>
