@@ -28,6 +28,14 @@ class Group: PFObject, PFSubclassing{
         super.init()
     }
     
+    override class func initialize() {
+        var onceToken : dispatch_once_t = 0;
+        dispatch_once(&onceToken) {
+            // inform Parse about this subclass
+            self.registerSubclass()
+        }
+    }
+    
     func uploadPhoto(){
         
         if let image = image.value{//if image has value
@@ -37,16 +45,17 @@ class Group: PFObject, PFSubclassing{
             
             user = PFUser.currentUser()//initialize
             self.groupPic = imageFile //initialize
-            
+        
             photoUploadTask = UIApplication.sharedApplication().beginBackgroundTaskWithExpirationHandler { () -> Void in
                 UIApplication.sharedApplication().endBackgroundTask(self.photoUploadTask!)
             }
             
-//            saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
-//                UIApplication.sharedApplication().endBackgroundTask(self.photoUploadTask!)
-//            }
+            saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+                UIApplication.sharedApplication().endBackgroundTask(self.photoUploadTask!)
+            }
         }
+//        if let newName = name.value{
+//            guard let name = PFFile(name: <#T##String?#>, data: <#T##NSData#>)else{return}
+//        }
     }
-
-    
 }

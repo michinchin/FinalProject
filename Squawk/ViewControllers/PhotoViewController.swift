@@ -18,6 +18,7 @@ class PhotoViewController: UIViewController {//view controller for adding group 
         
     }
     @IBAction func saveNewGroup(sender: AnyObject) {
+
     }
   
     var imagePicker: UIImagePickerController!

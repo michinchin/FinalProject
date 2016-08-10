@@ -11,7 +11,8 @@ import Parse
 
 class GroupsTableViewController: UITableViewController {
     
-
+    var groups: [Group] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.delegate = self
@@ -46,6 +47,9 @@ class GroupsTableViewController: UITableViewController {
         // 5
         return cell
     }
+
+
+    
     @IBAction func unwindToGroupsTableView(segue: UIStoryboardSegue){
         
         

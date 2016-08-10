@@ -10,25 +10,17 @@
         <scene sceneID="Mn8-i3-628">
             <objects>
                 <tableViewController title="Groups" id="hIH-2t-xj3" customClass="GroupsTableViewController" customModule="Squawk" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="79l-zz-fBo">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="200" sectionHeaderHeight="28" sectionFooterHeight="28" id="79l-zz-fBo">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="listGroupsCell" id="G8Q-6b-j3i">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="listGroupsCell" rowHeight="200" id="G8Q-6b-j3i">
+                                <rect key="frame" x="0.0" y="92" width="600" height="200"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="G8Q-6b-j3i" id="BRc-tg-sZM">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="199.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="GroupName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V3h-53-h2N">
-                                            <rect key="frame" x="84" y="11" width="127" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -75,7 +67,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Dak-fp-DtB">
-                                <rect key="frame" x="175" y="222" width="250" height="250"/>
+                                <rect key="frame" x="175" y="192" width="250" height="250"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="Npq-kp-YL6"/>
@@ -83,7 +75,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ep-XC-4Ox">
-                                <rect key="frame" x="244" y="482" width="111" height="30"/>
+                                <rect key="frame" x="244" y="452" width="111" height="30"/>
                                 <state key="normal" title="AddGroupPhoto">
                                     <color key="titleColor" red="0.12941176470588237" green="0.74509803921568629" blue="0.44705882352941179" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -92,7 +84,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="GroupName" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Ee-qj-2CC">
-                                <rect key="frame" x="20" y="114" width="560" height="58"/>
+                                <rect key="frame" x="20" y="104" width="560" height="58"/>
                                 <color key="backgroundColor" red="0.098039215686274508" green="0.77647058823529413" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="58" id="LEi-Pc-3l7"/>
@@ -104,18 +96,19 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Dak-fp-DtB" firstAttribute="centerY" secondItem="kAe-OX-qCu" secondAttribute="centerY" constant="60" id="4Xm-u0-djK"/>
+                            <constraint firstItem="Dak-fp-DtB" firstAttribute="centerY" secondItem="kAe-OX-qCu" secondAttribute="centerY" id="4Xm-u0-djK"/>
                             <constraint firstItem="5Ep-XC-4Ox" firstAttribute="top" secondItem="Dak-fp-DtB" secondAttribute="bottom" constant="10" id="AVA-wl-WwS"/>
                             <constraint firstItem="7Ee-qj-2CC" firstAttribute="centerX" secondItem="Dak-fp-DtB" secondAttribute="centerX" id="DPE-8f-iNa"/>
-                            <constraint firstItem="Dak-fp-DtB" firstAttribute="top" secondItem="7Ee-qj-2CC" secondAttribute="bottom" constant="50" id="HjG-Pp-paK"/>
+                            <constraint firstItem="Dak-fp-DtB" firstAttribute="top" secondItem="7Ee-qj-2CC" secondAttribute="bottom" constant="30" id="HjG-Pp-paK"/>
                             <constraint firstItem="5Ep-XC-4Ox" firstAttribute="top" secondItem="Dak-fp-DtB" secondAttribute="bottom" constant="8" id="Uba-V7-wUc"/>
                             <constraint firstItem="7Ee-qj-2CC" firstAttribute="leading" secondItem="kAe-OX-qCu" secondAttribute="leadingMargin" id="b0l-bV-isi"/>
                             <constraint firstItem="Dak-fp-DtB" firstAttribute="centerX" secondItem="kAe-OX-qCu" secondAttribute="centerX" id="fq2-3z-lcX"/>
-                            <constraint firstItem="7Ee-qj-2CC" firstAttribute="top" secondItem="eNl-Od-Cew" secondAttribute="bottom" constant="50" id="j58-jk-H1q"/>
+                            <constraint firstItem="7Ee-qj-2CC" firstAttribute="top" secondItem="eNl-Od-Cew" secondAttribute="bottom" constant="40" id="j58-jk-H1q"/>
                             <constraint firstItem="7Ee-qj-2CC" firstAttribute="centerX" secondItem="5Ep-XC-4Ox" secondAttribute="centerX" id="nNi-eS-hrT"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="4Xm-u0-djK"/>
                                 <exclude reference="Uba-V7-wUc"/>
                             </mask>
                         </variation>
@@ -131,7 +124,6 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="YWc-X6-3Cl">
                             <connections>
                                 <action selector="saveNewGroup:" destination="zc3-6m-ffH" id="z22-Ke-7gP"/>
-                                <segue destination="4y3-t4-xQ9" kind="unwind" unwindAction="unwindToGroupsTableView:" id="0Ve-Aj-9PH"/>
                             </connections>
                         </barButtonItem>
                         <connections>
