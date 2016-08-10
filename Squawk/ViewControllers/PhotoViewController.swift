@@ -8,12 +8,20 @@
 //
 
 import UIKit
+import Parse
 
 class PhotoViewController: UIViewController {//view controller for adding group photo
     
-    
+
     var photoTakingHelper: PhotoTakingHelper?
+    @IBAction func cancelToGroupsTableViewController(sender: AnyObject) {
+        
+    }
+    @IBAction func saveNewGroup(sender: AnyObject) {
+    }
+  
     var imagePicker: UIImagePickerController!
+    var groups: [Group] = []
     
     @IBOutlet weak var groupPhotoImageView: UIImageView!
     @IBOutlet weak var groupNameText: UITextField!
@@ -22,7 +30,10 @@ class PhotoViewController: UIViewController {//view controller for adding group 
     @IBAction func addGroupPhoto(sender: AnyObject) {
         photoTakingHelper = PhotoTakingHelper(viewController: self) { (image: UIImage?) in
             self.groupPhotoImageView.image = image
-            
+            let group = Group()
+            group.image.value = image!
+            group.name.value = self.groupNameText.text!
+            group.uploadPhoto()
         }
     }
     
@@ -37,6 +48,8 @@ class PhotoViewController: UIViewController {//view controller for adding group 
         // Dispose of any resources that can be recreated.
     }
     
+
+
     /*
     // MARK: - Navigation
 

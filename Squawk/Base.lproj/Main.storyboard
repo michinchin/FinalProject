@@ -76,6 +76,7 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Dak-fp-DtB">
                                 <rect key="frame" x="175" y="222" width="250" height="250"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="Npq-kp-YL6"/>
                                     <constraint firstAttribute="height" constant="250" id="Zq3-5o-qhB"/>
@@ -121,8 +122,22 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Add New Group" id="Ugk-4m-92F">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="2eA-H1-8YD"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="YWc-X6-3Cl"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="2eA-H1-8YD">
+                            <connections>
+                                <action selector="cancelToGroupsTableViewController:" destination="zc3-6m-ffH" id="Mtg-tt-TLp"/>
+                                <segue destination="4y3-t4-xQ9" kind="unwind" unwindAction="unwindToGroupsTableView:" id="uOb-Xa-4kE"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="YWc-X6-3Cl">
+                            <connections>
+                                <action selector="saveNewGroup:" destination="zc3-6m-ffH" id="z22-Ke-7gP"/>
+                                <segue destination="4y3-t4-xQ9" kind="unwind" unwindAction="unwindToGroupsTableView:" id="0Ve-Aj-9PH"/>
+                            </connections>
+                        </barButtonItem>
+                        <connections>
+                            <outlet property="leftBarButtonItem" destination="2eA-H1-8YD" id="sgZ-G5-zUF"/>
+                            <outlet property="rightBarButtonItem" destination="YWc-X6-3Cl" id="CmV-ep-HRQ"/>
+                        </connections>
                     </navigationItem>
                     <connections>
                         <outlet property="groupNameText" destination="7Ee-qj-2CC" id="1XY-hi-exQ"/>
@@ -130,6 +145,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vHT-Tq-rWY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="4y3-t4-xQ9" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1106" y="-719"/>
         </scene>
