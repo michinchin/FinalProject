@@ -74,9 +74,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Dak-fp-DtB">
+                                <rect key="frame" x="175" y="222" width="250" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="Npq-kp-YL6"/>
+                                    <constraint firstAttribute="height" constant="250" id="Zq3-5o-qhB"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ep-XC-4Ox">
+                                <rect key="frame" x="244" y="482" width="111" height="30"/>
+                                <state key="normal" title="AddGroupPhoto">
+                                    <color key="titleColor" red="0.12941176470588237" green="0.74509803921568629" blue="0.44705882352941179" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="addGroupPhoto:" destination="zc3-6m-ffH" eventType="touchUpInside" id="Ml0-7M-lRS"/>
+                                </connections>
+                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="GroupName" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Ee-qj-2CC">
-                                <rect key="frame" x="-6" y="131" width="612" height="58"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="20" y="114" width="560" height="58"/>
+                                <color key="backgroundColor" red="0.098039215686274508" green="0.77647058823529413" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="58" id="LEi-Pc-3l7"/>
                                 </constraints>
@@ -84,27 +100,17 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dak-fp-DtB">
-                                <rect key="frame" x="174" y="245" width="253" height="230"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ep-XC-4Ox">
-                                <rect key="frame" x="225" y="483" width="150" height="30"/>
-                                <state key="normal" title="AddGroupPhoto"/>
-                                <connections>
-                                    <action selector="addGroupPhoto:" destination="zc3-6m-ffH" eventType="touchUpInside" id="Ml0-7M-lRS"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Dak-fp-DtB" firstAttribute="centerY" secondItem="kAe-OX-qCu" secondAttribute="centerY" constant="60" id="4Xm-u0-djK"/>
                             <constraint firstItem="5Ep-XC-4Ox" firstAttribute="top" secondItem="Dak-fp-DtB" secondAttribute="bottom" constant="10" id="AVA-wl-WwS"/>
                             <constraint firstItem="7Ee-qj-2CC" firstAttribute="centerX" secondItem="Dak-fp-DtB" secondAttribute="centerX" id="DPE-8f-iNa"/>
-                            <constraint firstItem="Dak-fp-DtB" firstAttribute="top" secondItem="7Ee-qj-2CC" secondAttribute="bottom" constant="56" id="HjG-Pp-paK"/>
+                            <constraint firstItem="Dak-fp-DtB" firstAttribute="top" secondItem="7Ee-qj-2CC" secondAttribute="bottom" constant="50" id="HjG-Pp-paK"/>
                             <constraint firstItem="5Ep-XC-4Ox" firstAttribute="top" secondItem="Dak-fp-DtB" secondAttribute="bottom" constant="8" id="Uba-V7-wUc"/>
-                            <constraint firstItem="7Ee-qj-2CC" firstAttribute="leading" secondItem="kAe-OX-qCu" secondAttribute="leadingMargin" constant="-26" id="b0l-bV-isi"/>
+                            <constraint firstItem="7Ee-qj-2CC" firstAttribute="leading" secondItem="kAe-OX-qCu" secondAttribute="leadingMargin" id="b0l-bV-isi"/>
                             <constraint firstItem="Dak-fp-DtB" firstAttribute="centerX" secondItem="kAe-OX-qCu" secondAttribute="centerX" id="fq2-3z-lcX"/>
-                            <constraint firstItem="7Ee-qj-2CC" firstAttribute="top" secondItem="eNl-Od-Cew" secondAttribute="bottom" constant="67" id="j58-jk-H1q"/>
+                            <constraint firstItem="7Ee-qj-2CC" firstAttribute="top" secondItem="eNl-Od-Cew" secondAttribute="bottom" constant="50" id="j58-jk-H1q"/>
                             <constraint firstItem="7Ee-qj-2CC" firstAttribute="centerX" secondItem="5Ep-XC-4Ox" secondAttribute="centerX" id="nNi-eS-hrT"/>
                         </constraints>
                         <variation key="default">
@@ -118,6 +124,10 @@
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="2eA-H1-8YD"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="YWc-X6-3Cl"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="groupNameText" destination="7Ee-qj-2CC" id="1XY-hi-exQ"/>
+                        <outlet property="groupPhotoImageView" destination="Dak-fp-DtB" id="9e4-Wk-kLa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vHT-Tq-rWY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -257,7 +267,6 @@
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="9ee-X5-LDb" id="m3B-TU-XJo"/>
-                                    <outlet property="delegate" destination="9ee-X5-LDb" id="Sr8-NE-fHn"/>
                                 </connections>
                             </tableView>
                         </subviews>

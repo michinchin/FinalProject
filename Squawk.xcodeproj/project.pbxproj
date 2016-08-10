@@ -19,6 +19,7 @@
 		F33337C51D54023D00BA2400 /* PhotoTimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33337C41D54023D00BA2400 /* PhotoTimelineViewController.swift */; };
 		F33337CA1D5410D300BA2400 /* PhotoTakingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33337C91D5410D300BA2400 /* PhotoTakingHelper.swift */; };
 		F3395F6F1D53F4B6002733DE /* GroupsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3395F6E1D53F4B6002733DE /* GroupsTableViewController.swift */; };
+		F39CED581D5B9FF900A419C2 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39CED571D5B9FF900A419C2 /* Group.swift */; };
 		F3C7437A1D54FB6B008A070F /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C743791D54FB6B008A070F /* PhotoViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		F33337C41D54023D00BA2400 /* PhotoTimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoTimelineViewController.swift; sourceTree = "<group>"; };
 		F33337C91D5410D300BA2400 /* PhotoTakingHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoTakingHelper.swift; sourceTree = "<group>"; };
 		F3395F6E1D53F4B6002733DE /* GroupsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupsTableViewController.swift; sourceTree = "<group>"; };
+		F39CED571D5B9FF900A419C2 /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		F3C743791D54FB6B008A070F /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				F301CD171D5A3C8400FFAAFA /* Post.swift */,
+				F39CED571D5B9FF900A419C2 /* Group.swift */,
 			);
 			name = Models;
 			path = PhotoTaking/Models;
@@ -274,6 +277,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F39CED581D5B9FF900A419C2 /* Group.swift in Sources */,
 				F33337C51D54023D00BA2400 /* PhotoTimelineViewController.swift in Sources */,
 				F301CD101D5A3A2500FFAAFA /* ParseLoginHelper.swift in Sources */,
 				F301CD151D5A3C0600FFAAFA /* ParseHelper.swift in Sources */,

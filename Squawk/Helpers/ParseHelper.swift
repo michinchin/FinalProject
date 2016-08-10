@@ -12,7 +12,7 @@ import Parse
 // 1
 class ParseHelper {
     // Following Relation
-    static let ParseFollowClass       = "Follow"
+    static let ParseGroupFollowClass  = "Group"
     static let ParseFollowFromUser    = "fromUser"
     static let ParseFollowToUser      = "toUser"
     
@@ -36,7 +36,7 @@ class ParseHelper {
     
     // 2
     static func timelineRequestForCurrentUser(completionBlock: PFQueryArrayResultBlock) {
-        let followingQuery = PFQuery(className: ParseFollowClass)
+        let followingQuery = PFQuery(className: ParseGroupFollowClass)
         followingQuery.whereKey(ParseFollowFromUser, equalTo:PFUser.currentUser()!)
         
         let postsFromFollowedUsers = Post.query()

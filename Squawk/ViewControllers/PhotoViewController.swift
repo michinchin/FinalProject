@@ -9,17 +9,23 @@
 
 import UIKit
 
-class PhotoViewController: UIViewController {
+class PhotoViewController: UIViewController {//view controller for adding group photo
     
     
     var photoTakingHelper: PhotoTakingHelper?
     var imagePicker: UIImagePickerController!
     
+    @IBOutlet weak var groupPhotoImageView: UIImageView!
+    @IBOutlet weak var groupNameText: UITextField!
+    
     
     @IBAction func addGroupPhoto(sender: AnyObject) {
         photoTakingHelper = PhotoTakingHelper(viewController: self) { (image: UIImage?) in
+        
+            
         }
     }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
