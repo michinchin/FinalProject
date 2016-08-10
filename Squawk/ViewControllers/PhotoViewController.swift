@@ -21,7 +21,7 @@ class PhotoViewController: UIViewController {//view controller for adding group 
     
     @IBAction func addGroupPhoto(sender: AnyObject) {
         photoTakingHelper = PhotoTakingHelper(viewController: self) { (image: UIImage?) in
-        
+            self.groupPhotoImageView.image = image
             
         }
     }
