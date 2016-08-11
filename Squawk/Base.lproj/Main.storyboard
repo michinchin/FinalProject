@@ -22,25 +22,41 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="149.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="p08-RM-Z75">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yd4-Ej-MgT">
                                             <rect key="frame" x="17" y="0.0" width="135" height="135"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yd4-Ej-MgT">
-                                                    <rect key="frame" x="0.0" y="0.0" width="135" height="135"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="135" id="b3X-aZ-sKX"/>
-                                                        <constraint firstAttribute="height" constant="135" id="yWC-R9-Dy8"/>
-                                                    </constraints>
-                                                </imageView>
-                                            </subviews>
                                             <constraints>
-                                                <constraint firstItem="yd4-Ej-MgT" firstAttribute="centerY" secondItem="p08-RM-Z75" secondAttribute="centerY" id="leb-qH-qsj"/>
+                                                <constraint firstAttribute="width" constant="135" id="b3X-aZ-sKX"/>
+                                                <constraint firstAttribute="height" constant="135" id="yWC-R9-Dy8"/>
                                             </constraints>
-                                        </stackView>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T8P-D5-XZe">
+                                            <rect key="frame" x="205" y="50" width="350" height="50"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="350" id="DEm-1S-WHz"/>
+                                                <constraint firstAttribute="height" constant="50" id="oMn-mZ-eQN"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="yd4-Ej-MgT" secondAttribute="bottom" constant="7.25" id="ODJ-mA-eeJ"/>
+                                        <constraint firstItem="T8P-D5-XZe" firstAttribute="centerY" secondItem="BRc-tg-sZM" secondAttribute="centerY" id="QUe-jg-tSv"/>
+                                        <constraint firstItem="yd4-Ej-MgT" firstAttribute="top" secondItem="BRc-tg-sZM" secondAttribute="top" constant="7.25" id="TIo-hU-waR"/>
+                                        <constraint firstItem="yd4-Ej-MgT" firstAttribute="leading" secondItem="BRc-tg-sZM" secondAttribute="leading" constant="20" id="aEf-vH-Lpf"/>
+                                        <constraint firstItem="T8P-D5-XZe" firstAttribute="leading" secondItem="yd4-Ej-MgT" secondAttribute="trailing" constant="50" id="naP-Jb-B5s"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="ODJ-mA-eeJ"/>
+                                            <exclude reference="TIo-hU-waR"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="groupImageView" destination="yd4-Ej-MgT" id="bV1-tC-SAI"/>
+                                    <outlet property="groupTableLabel" destination="T8P-D5-XZe" id="o45-2E-3q6"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

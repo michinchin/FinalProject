@@ -43,13 +43,13 @@ class GroupsTableViewController: UITableViewController {
     // 2
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         // 3
-        let cell = tableView.dequeueReusableCellWithIdentifier("listGroupsCell", forIndexPath: indexPath)
-        
+        let cell = tableView.dequeueReusableCellWithIdentifier("listGroupsCell", forIndexPath: indexPath) as! GroupTableViewCell
         let row = indexPath.row
         // 4
         let group = groups[row]
         
-        cell.textLabel?.text = "It's finally working!"
+        cell.groupTableLabel.text = group.name.value
+        cell.groupImageView.image = group.image.value
         
         // 5
         return cell

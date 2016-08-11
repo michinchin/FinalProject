@@ -13,12 +13,12 @@ import Parse
 class Group: PFObject, PFSubclassing{
     
     var image: Observable<UIImage?> = Observable(nil)
-    var name: Observable<String?> = Observable(nil)
     var photoUploadTask: UIBackgroundTaskIdentifier?
 
     
     @NSManaged var groupPic: PFFile?
     @NSManaged var user: PFUser?
+    @NSManaged var name: String?
     
     static func parseClassName() -> String {
         return "Group"

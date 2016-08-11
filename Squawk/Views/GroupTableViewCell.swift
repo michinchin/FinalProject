@@ -9,7 +9,7 @@
 import UIKit
 
 class GroupTableViewCell: UITableViewCell {
-
+    @IBOutlet weak var groupTableLabel: UILabel!
     
     func circularImage(photoImageView: UIImageView?)
     {

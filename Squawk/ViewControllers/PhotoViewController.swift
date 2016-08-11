@@ -33,7 +33,7 @@ class PhotoViewController: UIViewController {//view controller for adding group 
             self.groupPhotoImageView.image = image
             let group = Group()
             group.image.value = image!
-            group.name.value = self.groupNameText.text!
+            group.name = self.groupNameText.text!
             group.uploadPhoto()
             group.uploadName()
         }
