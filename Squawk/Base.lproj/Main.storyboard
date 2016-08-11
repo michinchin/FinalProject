@@ -22,8 +22,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="149.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yd4-Ej-MgT">
-                                            <rect key="frame" x="17" y="0.0" width="135" height="135"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yd4-Ej-MgT">
+                                            <rect key="frame" x="20" y="7.5" width="135" height="135"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="135" id="b3X-aZ-sKX"/>
                                                 <constraint firstAttribute="height" constant="135" id="yWC-R9-Dy8"/>
@@ -46,6 +46,7 @@
                                         <constraint firstItem="yd4-Ej-MgT" firstAttribute="top" secondItem="BRc-tg-sZM" secondAttribute="top" constant="7.25" id="TIo-hU-waR"/>
                                         <constraint firstItem="yd4-Ej-MgT" firstAttribute="leading" secondItem="BRc-tg-sZM" secondAttribute="leading" constant="20" id="aEf-vH-Lpf"/>
                                         <constraint firstItem="T8P-D5-XZe" firstAttribute="leading" secondItem="yd4-Ej-MgT" secondAttribute="trailing" constant="50" id="naP-Jb-B5s"/>
+                                        <constraint firstItem="yd4-Ej-MgT" firstAttribute="centerY" secondItem="BRc-tg-sZM" secondAttribute="centerY" id="uUs-M7-njB"/>
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
@@ -57,6 +58,7 @@
                                 <connections>
                                     <outlet property="groupImageView" destination="yd4-Ej-MgT" id="bV1-tC-SAI"/>
                                     <outlet property="groupTableLabel" destination="T8P-D5-XZe" id="o45-2E-3q6"/>
+                                    <segue destination="zc3-6m-ffH" kind="show" id="GXl-OT-XWy"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -68,6 +70,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Squads" id="te5-SO-bGY">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="nS7-54-LrO">
+                            <color key="tintColor" red="0.12941176469999999" green="0.74509803919999995" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="zc3-6m-ffH" kind="show" id="Dai-na-suY"/>
                             </connections>
@@ -152,24 +155,27 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Add New Group" id="Ugk-4m-92F">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="2eA-H1-8YD">
+                            <color key="tintColor" red="0.12941176469999999" green="0.74509803919999995" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <action selector="cancelToGroupsTableViewController:" destination="zc3-6m-ffH" id="Mtg-tt-TLp"/>
-                                <segue destination="4y3-t4-xQ9" kind="unwind" unwindAction="unwindToGroupsTableView:" id="uOb-Xa-4kE"/>
+                                <segue destination="4y3-t4-xQ9" kind="unwind" unwindAction="unwindtoGroupTableView:" id="lwE-TZ-FeQ"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="YWc-X6-3Cl">
+                            <color key="tintColor" red="0.12941176469999999" green="0.74509803919999995" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <action selector="saveNewGroup:" destination="zc3-6m-ffH" id="z22-Ke-7gP"/>
+                                <segue destination="4y3-t4-xQ9" kind="unwind" unwindAction="saveAndReturn:" id="EAn-nU-xb6"/>
                             </connections>
                         </barButtonItem>
                         <connections>
                             <outlet property="leftBarButtonItem" destination="2eA-H1-8YD" id="sgZ-G5-zUF"/>
-                            <outlet property="rightBarButtonItem" destination="YWc-X6-3Cl" id="CmV-ep-HRQ"/>
+                            <outlet property="rightBarButtonItem" destination="YWc-X6-3Cl" id="1wp-fb-FhF"/>
                         </connections>
                     </navigationItem>
                     <connections>
                         <outlet property="groupNameText" destination="7Ee-qj-2CC" id="1XY-hi-exQ"/>
                         <outlet property="groupPhotoImageView" destination="Dak-fp-DtB" id="9e4-Wk-kLa"/>
+                        <segue destination="4y3-t4-xQ9" kind="unwind" identifier="saveAndReturn" unwindAction="saveAndReturn:" id="xAP-Tx-aFr"/>
+                        <segue destination="4y3-t4-xQ9" kind="unwind" identifier="unwindToGroupTableView" unwindAction="unwindtoGroupTableView:" id="gmT-PS-dpX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vHT-Tq-rWY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -324,6 +330,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="YdA-zA-qld">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="g5c-7Y-wpX">
+                            <color key="tintColor" red="0.12941176469999999" green="0.74509803919999995" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="addPhotoToTimeline:" destination="9ee-X5-LDb" id="7pv-gP-SxS"/>
                             </connections>
@@ -406,4 +413,7 @@
         <image name="Icon-1" width="45" height="46"/>
         <image name="More-Options" width="80" height="44"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Dai-na-suY"/>
+    </inferredMetricsTieBreakers>
 </document>

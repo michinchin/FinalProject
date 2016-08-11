@@ -11,10 +11,11 @@ import Parse
 
 // 1
 class ParseHelper {
-    // Following Relation
-    static let ParseGroupFollowClass  = "Group"
+    
+    //Following Relation
+    static let ParseFollowClass  = "Follow"
     static let ParseFollowFromUser    = "fromUser"
-    static let ParseFollowToUser      = "toUser"
+    static let ParseFollowToGroup      = "toGroup"
     
     // Like Relation
     static let ParseLikeClass         = "Like"
@@ -22,7 +23,7 @@ class ParseHelper {
     static let ParseLikeFromUser      = "fromUser"
     
     // Post Relation
-    static let ParsePostUser          = "user"
+    static let ParsePostUser          = "user"//pointer in post to user
     static let ParsePostCreatedAt     = "createdAt"
     
     // Flagged Content Relation
@@ -32,20 +33,25 @@ class ParseHelper {
     
     // User Relation
     static let ParseUserUsername      = "username"
-    
+    static let ParseGroupName = "name"
+
+    //Group Relation
+    static let ParseGroupClass = "Group"
+    static let ParseGroupFollowFromUser = "fromUser"
+    static let ParseGroupFollowToUser = "toUser"
     
     // 2
     static func timelineRequestForCurrentUser(completionBlock: PFQueryArrayResultBlock) {
-        let followingQuery = PFQuery(className: ParseGroupFollowClass)
-        followingQuery.whereKey(ParseFollowFromUser, equalTo:PFUser.currentUser()!)
+        let followingGroupQuery = PFQuery(className: ParseGroupClass)
+        followingGroupQuery.whereKey(ParseGroupFollowFromUser, equalTo:PFUser.currentUser()!)
         
-        let postsFromFollowedUsers = Post.query()
-        postsFromFollowedUsers!.whereKey(ParsePostUser, matchesKey: ParseFollowToUser, inQuery: followingQuery)
+        let postsFromGroup = Post.query()
+        postsFromGroup!.whereKey(ParsePostUser, matchesKey: ParseGroupFollowToUser, inQuery: followingGroupQuery)
         
         let postsFromThisUser = Post.query()
         postsFromThisUser!.whereKey(ParsePostUser, equalTo: PFUser.currentUser()!)
         
-        let query = PFQuery.orQueryWithSubqueries([postsFromFollowedUsers!, postsFromThisUser!])
+        let query = PFQuery.orQueryWithSubqueries([postsFromGroup!, postsFromThisUser!])
         query.includeKey(ParsePostUser)
         query.orderByDescending(ParsePostCreatedAt)
         
@@ -75,6 +81,7 @@ class ParseHelper {
         }
         
     }
+    
     static func likesForPost(post: Post, completionBlock: PFQueryArrayResultBlock) {
         let query = PFQuery(className: ParseLikeClass)
         query.whereKey(ParseLikeToPost, equalTo: post)
@@ -82,7 +89,22 @@ class ParseHelper {
         
         query.findObjectsInBackgroundWithBlock(completionBlock)
     }
+    static func joinGroup(user: PFUser, group: Group){
+        let joinObject = PFObject(className: ParseFollowClass)
+        joinObject[ParseFollowFromUser] = user
+        joinObject[ParseFollowToGroup] = group
+        
+        joinObject.saveInBackgroundWithBlock(nil)
+        
+    }
+    static func listRequestforCurrentGroup(completionBlock: PFQueryArrayResultBlock) {
+        let groupQuery = PFQuery(className: ParseGroupClass)
+        groupQuery.whereKey(ParseGroupFollowFromUser, equalTo: PFUser.currentUser()!)
+        
+        let squads = Group.query()
+        squads?.whereKey(ParseGroupFollowToUser, equalTo: PFUser.currentUser()!)
     
+    }
 }
 extension PFObject {
     

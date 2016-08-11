@@ -14,12 +14,6 @@ class PhotoViewController: UIViewController {//view controller for adding group 
     
 
     var photoTakingHelper: PhotoTakingHelper?
-    @IBAction func cancelToGroupsTableViewController(sender: AnyObject) {
-        
-    }
-    @IBAction func saveNewGroup(sender: AnyObject) {
-
-    }
   
     var imagePicker: UIImagePickerController!
     var groups: [Group] = []
