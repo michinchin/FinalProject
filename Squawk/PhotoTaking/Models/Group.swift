@@ -54,8 +54,13 @@ class Group: PFObject, PFSubclassing{
                 UIApplication.sharedApplication().endBackgroundTask(self.photoUploadTask!)
             }
         }
-//        if let newName = name.value{
-//            guard let name = PFFile(name: <#T##String?#>, data: <#T##NSData#>)else{return}
-//        }
+      
+    }
+    func uploadName(){
+    if let newName = name.value{
+        saveInBackgroundWithBlock({ (success: Bool, error: NSError?) in
+            newName
+        })
+}
     }
 }

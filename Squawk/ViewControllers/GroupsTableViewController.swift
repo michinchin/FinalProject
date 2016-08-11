@@ -11,7 +11,11 @@ import Parse
 
 class GroupsTableViewController: UITableViewController {
     
-    var groups: [Group] = []
+    var groups: [Group] = [] {
+        didSet {
+            tableView.reloadData()
+            }
+        }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +37,7 @@ class GroupsTableViewController: UITableViewController {
     
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return groups.count
     }
     
     // 2
@@ -41,7 +45,10 @@ class GroupsTableViewController: UITableViewController {
         // 3
         let cell = tableView.dequeueReusableCellWithIdentifier("listGroupsCell", forIndexPath: indexPath)
         
+        let row = indexPath.row
         // 4
+        let group = groups[row]
+        
         cell.textLabel?.text = "It's finally working!"
         
         // 5
@@ -50,10 +57,6 @@ class GroupsTableViewController: UITableViewController {
 
 
     
-    @IBAction func unwindToGroupsTableView(segue: UIStoryboardSegue){
-        
-        
-    }
 
 
 
