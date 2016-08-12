@@ -64,9 +64,8 @@ class GroupsTableViewController: UITableViewController {
         // 5
         return cell
     }
-    func getImage(){
-        
-    }
+    
+
 
     //for some reason need these actions...
     @IBAction func unwindtoGroupTableView(segue: UIStoryboardSegue){
@@ -75,7 +74,23 @@ class GroupsTableViewController: UITableViewController {
     @IBAction func saveAndReturn(segue: UIStoryboardSegue){
         
     }
-
-
-
+    /*Try to implement delete function*/
+//    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+//        if editingStyle == UITableViewCellEditingStyle.Delete {
+//            var groupClass = PFObject(className: "Group")
+//            groupClass.deleteInBackgroundWithBlock {(success, error) -> Void in
+//                if error == nil {
+//                    self.groups.removeAtIndex(indexPath.row)
+//                    tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+//                    print("successfully deleted!")
+//                } else {
+//                    print("something wrong, please try again")
+//                }
+//                //            groupClass = groups[indexPath.row] as PFObject
+//                //            groups.removeAtIndex(indexPath.row)
+//                //            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+//                
+//            }
+//        }
+//    }
 }
