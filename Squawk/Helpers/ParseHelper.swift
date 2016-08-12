@@ -101,6 +101,7 @@ class ParseHelper {
         let query = PFQuery(className: ParseGroupClass)
         query.orderByAscending(ParseGroupName)
         query.findObjectsInBackgroundWithBlock(completionBlock)
+    
     }
 }
 extension PFObject {

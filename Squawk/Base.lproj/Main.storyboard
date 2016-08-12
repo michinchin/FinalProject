@@ -22,8 +22,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="99.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1*l2BR37HbF7W0R6qcsxFBzg" translatesAutoresizingMaskIntoConstraints="NO" id="yd4-Ej-MgT">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yd4-Ej-MgT">
                                             <rect key="frame" x="20" y="7" width="85" height="85"/>
+                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="85" id="Syf-b1-W55"/>
                                                 <constraint firstAttribute="width" constant="135" id="b3X-aZ-sKX"/>
@@ -64,7 +65,7 @@
                                     </variation>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="groupImageView" destination="yd4-Ej-MgT" id="bV1-tC-SAI"/>
+                                    <outlet property="groupImageView" destination="yd4-Ej-MgT" id="qO9-ju-LqU"/>
                                     <outlet property="groupTableLabel" destination="T8P-D5-XZe" id="o45-2E-3q6"/>
                                     <segue destination="zc3-6m-ffH" kind="show" id="GXl-OT-XWy"/>
                                 </connections>
@@ -413,7 +414,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="1*l2BR37HbF7W0R6qcsxFBzg" width="70" height="47"/>
         <image name="1x" width="36" height="32"/>
         <image name="Blood" width="36" height="32"/>
         <image name="COMMUNICATION" width="46" height="46"/>

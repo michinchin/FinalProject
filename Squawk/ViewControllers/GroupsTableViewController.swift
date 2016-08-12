@@ -50,11 +50,22 @@ class GroupsTableViewController: UITableViewController {
         let group = self.groups[row]
         
         cell.groupTableLabel.text = group.name
-//        var thumbnail = UIImage(named: <#T##String#>)
+        let userImageFile = group["groupPic"] as! PFFile
+        userImageFile.getDataInBackgroundWithBlock { (imageData:NSData?, error:NSError?) in
+            if (error == nil) {
+                let image = UIImage(data:imageData!)
+                cell.groupImageView.image = image
+            }
+        }
+
 //        cell.groupImageView.image = group.image.value
+        
         
         // 5
         return cell
+    }
+    func getImage(){
+        
     }
 
     //for some reason need these actions...

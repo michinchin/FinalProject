@@ -9,8 +9,10 @@
 import UIKit
 
 class GroupTableViewCell: UITableViewCell {
+    
     @IBOutlet weak var groupTableLabel: UILabel!
     
+
     func circularImage(photoImageView: UIImageView?)
     {
         photoImageView!.layer.frame = CGRectInset(photoImageView!.layer.frame, 0, 0)
@@ -23,13 +25,9 @@ class GroupTableViewCell: UITableViewCell {
     }
     @IBOutlet weak var groupImageView: UIImageView!
 
-    func makeCircleImage(){
-        circularImage(groupImageView)
-    }
-    
-
     override func awakeFromNib() {
         super.awakeFromNib()
+        circularImage(groupImageView)
         // Initialization code
     }
 
