@@ -23,6 +23,8 @@ class GroupsTableViewController: UITableViewController {
         ParseHelper.listRequestforCurrentGroup { (result: [PFObject]?, error: NSError?) -> Void in
             self.groups = result as? [Group] ?? []
             
+            
+            
         }
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -45,10 +47,11 @@ class GroupsTableViewController: UITableViewController {
         
         let row = indexPath.row
         // 4
-        let group = groups[row]
+        let group = self.groups[row]
         
         cell.groupTableLabel.text = group.name
-        cell.groupImageView.image = group.image.value
+//        var thumbnail = UIImage(named: <#T##String#>)
+//        cell.groupImageView.image = group.image.value
         
         // 5
         return cell

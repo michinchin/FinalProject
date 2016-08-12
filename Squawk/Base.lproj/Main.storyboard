@@ -10,32 +10,40 @@
         <scene sceneID="Mn8-i3-628">
             <objects>
                 <tableViewController title="Groups" id="hIH-2t-xj3" customClass="GroupsTableViewController" customModule="Squawk" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="150" sectionHeaderHeight="28" sectionFooterHeight="28" id="79l-zz-fBo">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" id="79l-zz-fBo">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="listGroupsCell" rowHeight="150" id="G8Q-6b-j3i" customClass="GroupTableViewCell" customModule="Squawk" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="600" height="150"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="listGroupsCell" rowHeight="100" id="G8Q-6b-j3i" customClass="GroupTableViewCell" customModule="Squawk" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="G8Q-6b-j3i" id="BRc-tg-sZM">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="149.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="99.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yd4-Ej-MgT">
-                                            <rect key="frame" x="20" y="7.5" width="135" height="135"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1*l2BR37HbF7W0R6qcsxFBzg" translatesAutoresizingMaskIntoConstraints="NO" id="yd4-Ej-MgT">
+                                            <rect key="frame" x="20" y="7" width="85" height="85"/>
                                             <constraints>
+                                                <constraint firstAttribute="width" constant="85" id="Syf-b1-W55"/>
                                                 <constraint firstAttribute="width" constant="135" id="b3X-aZ-sKX"/>
+                                                <constraint firstAttribute="height" constant="85" id="sqn-wA-aZ5"/>
                                                 <constraint firstAttribute="height" constant="135" id="yWC-R9-Dy8"/>
                                             </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="b3X-aZ-sKX"/>
+                                                    <exclude reference="yWC-R9-Dy8"/>
+                                                </mask>
+                                            </variation>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T8P-D5-XZe">
-                                            <rect key="frame" x="205" y="50" width="350" height="50"/>
+                                            <rect key="frame" x="155" y="25" width="350" height="50"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="350" id="DEm-1S-WHz"/>
                                                 <constraint firstAttribute="height" constant="50" id="oMn-mZ-eQN"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -405,6 +413,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="1*l2BR37HbF7W0R6qcsxFBzg" width="70" height="47"/>
         <image name="1x" width="36" height="32"/>
         <image name="Blood" width="36" height="32"/>
         <image name="COMMUNICATION" width="46" height="46"/>

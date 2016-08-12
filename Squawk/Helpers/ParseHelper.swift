@@ -98,12 +98,9 @@ class ParseHelper {
         
     }
     static func listRequestforCurrentGroup(completionBlock: PFQueryArrayResultBlock) {
-        let groupQuery = PFQuery(className: ParseGroupClass)
-        groupQuery.whereKey(ParseGroupFollowFromUser, equalTo: PFUser.currentUser()!)
-        
-        let squads = Group.query()
-        squads?.whereKey(ParseGroupFollowToUser, equalTo: PFUser.currentUser()!)
-    
+        let query = PFQuery(className: ParseGroupClass)
+        query.orderByAscending(ParseGroupName)
+        query.findObjectsInBackgroundWithBlock(completionBlock)
     }
 }
 extension PFObject {
